@@ -9,7 +9,7 @@ var TerserWebpackPlugin = require('terser-webpack-plugin');
 var CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  entry: './src/new.ts',
+  entry: './src/index.js',
   mode: "development",
   output: {
     filename: 'main.js'
@@ -35,10 +35,15 @@ module.exports = {
       test: /\.pug$/,
       use: 'pug-loader'
     }, {
-      test: /\.tsx?$/,
+      test: /\.ts$/,
       use: 'ts-loader',
       exclude: /node_modules/
-    }]
+    } // {
+    //     test: /\.js$/,
+    //     exclude: '/node_modules/',
+    //     use: 'eslint-loader'
+    // }
+    ]
   }
 };
 //# sourceMappingURL=webpack.config.dev.js.map
