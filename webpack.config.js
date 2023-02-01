@@ -1,4 +1,4 @@
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const HTMLWebpackPlugin = require('html-webpack-plugin');
 // const TerserWebpackPlugin = require('terser-webpack-plugin');
 // const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
@@ -9,15 +9,15 @@ module.exports = {
     output: {
         filename: 'main.js'
     },
-//     plugins: [
-//         new MiniCssExtractPlugin(),
+    plugins: [
+        new MiniCssExtractPlugin(),
 //         new CssMinimizerWebpackPlugin(),
 //         new TerserWebpackPlugin(),
 //         new HTMLWebpackPlugin({
 //             template: "src/index.pug",
 //             filename: "index.html"
 //         }),
-//     ],
+            ],
 //     optimization: {
 //         minimize: true,
 //         minimizer: [
@@ -28,7 +28,12 @@ module.exports = {
     module: {
         rules: [
             {
-                use: ['style-loader', 'css-loader'],
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        esModule: true,
+                    }
+                },'css-loader'],
                 test: /\.css$/ 
             }
             // {
