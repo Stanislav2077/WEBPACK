@@ -13,10 +13,10 @@ module.exports = {
         new MiniCssExtractPlugin(),
         new CssMinimizerWebpackPlugin(),
         new TerserWebpackPlugin(),
-        new HTMLWebpackPlugin()
-        //     template: "src/index.pug",
-        //     filename: "index.html"
-        // }),
+        new HTMLWebpackPlugin({
+            template: "src/index.pug",
+            filename: "index.html"
+        }),
             ],
     optimization: {
         minimize: true,
