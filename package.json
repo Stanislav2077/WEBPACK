@@ -19,7 +19,9 @@
   "homepage": "https://github.com/Stanislav2077/WEBPACK#readme",
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "mini-css-extract-plugin": "^2.7.2",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6"
   }
 }

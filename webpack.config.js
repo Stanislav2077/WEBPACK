@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const HTMLWebpackPlugin = require('html-webpack-plugin');
-// const TerserWebpackPlugin = require('terser-webpack-plugin');
-// const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -11,20 +11,20 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-//         new CssMinimizerWebpackPlugin(),
-//         new TerserWebpackPlugin(),
-//         new HTMLWebpackPlugin({
-//             template: "src/index.pug",
-//             filename: "index.html"
-//         }),
+        new CssMinimizerWebpackPlugin(),
+        new TerserWebpackPlugin(),
+        // new HTMLWebpackPlugin({
+        //     template: "src/index.pug",
+        //     filename: "index.html"
+        // }),
             ],
-//     optimization: {
-//         minimize: true,
-//         minimizer: [
-//             new TerserWebpackPlugin(),
-//             new CssMinimizerWebpackPlugin()
-//         ]
-//     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserWebpackPlugin(),
+            new CssMinimizerWebpackPlugin()
+        ]
+    },
     module: {
         rules: [
             {
