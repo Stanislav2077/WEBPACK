@@ -4,7 +4,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/new.ts',
     mode: "development",
     output: {
         filename: 'main.js'
@@ -39,7 +39,13 @@ module.exports = {
             {
                 test:/\.pug$/,
                 use: 'pug-loader'
-            }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        
         ]
     }
 };
