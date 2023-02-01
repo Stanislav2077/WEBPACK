@@ -25,22 +25,16 @@ module.exports = {
 //             new CssMinimizerWebpackPlugin()
 //         ]
 //     },
-//     module: {
-//         rules: [
-//             {
-//                 use: [{
-//                     loader: MiniCssExtractPlugin.loader,
-//                     options: {
-//                         esModule: true,
-//                     }
-//                 },
-//                     'css-loader'],
-//                 test: /\.css$/ 
-//             },
-//             {
-//                 test:/\.pug$/,
-//                 use: 'pug-loader'
-//             }
-//         ]
-//     }
+    module: {
+        rules: [
+            {
+                use: ['style-loader', 'css-loader'],
+                test: /\.css$/ 
+            }
+            // {
+            //     test:/\.pug$/,
+            //     use: 'pug-loader'
+            // }
+        ]
+    }
 };

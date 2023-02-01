@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Stanislav2077/WEBPACK/issues"
   },
-  "homepage": "https://github.com/Stanislav2077/WEBPACK#readme"
+  "homepage": "https://github.com/Stanislav2077/WEBPACK#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.1"
+  }
 }
