@@ -1,8 +1,7 @@
-document.write("Hello, world");
-
-
 import "./style.css";
 import * as math from "./math";
+
+document.write("Hello, world!!!");
 
 const multiply = (a) => a * 8;
 

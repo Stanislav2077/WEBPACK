@@ -14,15 +14,19 @@ module.exports = {
   output: {
     filename: 'main.js'
   },
-  devServer: {
-    // contentBase: './dist',
-    port: 3001
-  },
   plugins: [new MiniCssExtractPlugin(), new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin(), new HTMLWebpackPlugin({
     template: "src/index.pug",
     filename: "index.html",
     title: "development"
   })],
+  devServer: {
+    // contentBase: 'src',
+    port: 3001 // stats: {
+    //     children: false,
+    //     maxModules: 0
+    // }
+
+  },
   optimization: {
     minimize: true,
     minimizer: [new TerserWebpackPlugin(), new CssMinimizerWebpackPlugin()]

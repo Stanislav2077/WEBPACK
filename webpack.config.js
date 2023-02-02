@@ -9,10 +9,6 @@ module.exports = {
     output: {
         filename: 'main.js'
     },
-    devServer: {
-        // contentBase: './dist',
-        port: 3001
-    },
     plugins: [
         new MiniCssExtractPlugin(),
         new CssMinimizerWebpackPlugin(),
@@ -23,6 +19,14 @@ module.exports = {
             title: "development",
         }),
             ],
+    devServer: {
+        // contentBase: 'src',
+        port: 3001,
+        // stats: {
+        //     children: false,
+        //     maxModules: 0
+        // }
+    },
     optimization: {
         minimize: true,
         minimizer: [
