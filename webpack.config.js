@@ -9,13 +9,18 @@ module.exports = {
     output: {
         filename: 'main.js'
     },
+    devServer: {
+        // contentBase: 'dist',
+        port: 3001
+    },
     plugins: [
         new MiniCssExtractPlugin(),
         new CssMinimizerWebpackPlugin(),
         new TerserWebpackPlugin(),
         new HTMLWebpackPlugin({
             template: "src/index.pug",
-            filename: "index.html"
+            filename: "index.html",
+            title: "development",
         }),
             ],
     optimization: {
