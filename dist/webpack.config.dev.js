@@ -15,7 +15,7 @@ module.exports = {
     filename: 'main.js'
   },
   devServer: {
-    // contentBase: 'dist',
+    // contentBase: './dist',
     port: 3001
   },
   plugins: [new MiniCssExtractPlugin(), new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin(), new HTMLWebpackPlugin({
@@ -36,18 +36,20 @@ module.exports = {
         }
       }, 'css-loader'],
       test: /\.css$/
-    }, {
-      test: /\.pug$/,
-      use: 'pug-loader'
-    }, {
-      test: /\.ts$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
-    } // {
-    //     test: /\.js$/,
-    //     exclude: '/node_modules/',
-    //     use: 'eslint-loader'
-    // }
+    } //         {
+    //             test:/\.pug$/,
+    //             use: 'pug-loader'
+    //         },
+    //         {
+    //             test: /\.ts$/,
+    //             use: 'ts-loader',
+    //             exclude: /node_modules/,
+    //         },
+    //         {
+    //             test: /\.js$/,
+    //             exclude: '/node_modules/',
+    //             use: 'eslint-loader'
+    //         }
     ]
   }
 };
